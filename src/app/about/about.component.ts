@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LEADERS } from '../shared/leaders';
 
 @Component({
   selector: 'app-about',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  leaders = LEADERS;
   constructor() { }
 
   ngOnInit() {
