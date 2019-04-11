@@ -58,16 +58,34 @@
 
   <div fxFlex>
     <h2>Corporate Leadership</h2>
+  </div>
+  <div fxFlex fxFlexOffset="40px" *ngIf="leaders">
     <mat-list-item *ngFor="let leader of leaders">
-      <div fxLayout="row" fxLayoutAlign="space-around center">
-        <img style="border-radius:50%" src={{leader.image}} alt="{{leader.name}}">
-        <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="0px">
-          <p>{{leader.name}}</p>
-          <p>{{leader.abbr}}</p>
-          <p>{{leader.description}}</p>
+      <!-- <div fxLayout="row" fxLayoutAlign="space-around center">
+          <img style="width:50px border-radius:50%" src={{leader.image}} alt="{{leader.name}}">
+          <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="0px">
+            <p>{{leader.name}}</p>
+            <p>{{leader.abbr}}</p>
+            <p>{{leader.description}}</p>
+          </div>
+        </div> -->
+      <div fxLayout="row">
+        <div fxFlex=20>
+          <img width="200px" src={{leader.image}} alt={{leader.name}}>
+        </div>
+        <div fxFlex=80>
+          <div fxLayout="column" fxLayoutGap="0px">
+            <p>{{leader.name}}</p>
+            <p>{{leader.abbr}}</p>
+            <p>{{leader.description}}</p>
+          </div>
         </div>
       </div>
     </mat-list-item>
+  </div>
+  <div [hidden]="leaders">
+    <mat-spinner></mat-spinner>
+    <h5>Loading leaders</h5>
   </div>
 
 </div>
