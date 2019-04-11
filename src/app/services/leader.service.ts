@@ -8,7 +8,7 @@ import { LEADERS } from '../shared/leaders';
 export class LeaderService {
 
   constructor() { }
-  getFeaturedLeader(): Leader {
-    return LEADERS.filter(leader => leader.featured === true)[0];
+  getFeaturedLeader(): Promise<Leader> {
+    return Promise.resolve(LEADERS.filter(leader => leader.featured === true)[0]);
   }
 }
