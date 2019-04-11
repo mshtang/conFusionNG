@@ -56,13 +56,13 @@
       </p>
       <p>
         <mat-form-field class="half-width">
-          <input type="tel" matInput formControlName="telnum" placeholder="Tel. No." required>
+          <input type="tel" matInput formControlName="telnum" placeholder="Tel. No." pattern="[0-9]*" required>
           <!-- <mat-error *ngIf="feedbackForm.get('telnum').touched && feedbackForm.get('telnum').hasError('required')">Tel.
             number is required</mat-error> -->
           <mat-error *ngIf="formErrors.telnum">{{formErrors.telnum}}</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
-          <input type="email" matInput formControlName="email" placeholder="Email" required>
+          <input type="email" matInput formControlName="email" placeholder="Email" email required>
           <!-- <mat-error *ngIf="feedbackForm.get('email').touched && feedbackForm.get('email').hasError('required')">Email
             is required</mat-error> -->
           <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
