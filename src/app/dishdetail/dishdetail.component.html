@@ -20,21 +20,54 @@
     </mat-card-actions>
   </mat-card>
 
-  <mat-card fxFlex *ngIf="dish">
-    <mat-card-header>
-      <mat-card-title>
-        <h2>Comments</h2>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-list>
-        <mat-list-item *ngFor="let cmt of dish.comments">
-          <p matLine>{{cmt.comment}}</p>
-          <p matLine>{{cmt.rating}} Stars</p>
-          <p matLine>--{{cmt.author}} {{cmt.date|date}}</p>
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
+  <div fxLayout="column" fxLayout.sm="column">
+    <mat-card fxFlex *ngIf="dish">
+      <mat-card-header>
+        <mat-card-title>
+          <h2>Comments</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor="let cmt of dish.comments">
+            <p matLine>{{cmt.commentText}}</p>
+            <p matLine>{{cmt.rating}} Stars</p>
+            <p matLine>--{{cmt.author}} {{cmt.date|date}}</p>
+          </mat-list-item>
+          <mat-list-item *ngIf="cmtForm.valid">
+            <p matLine>{{commentForm.value.commentText}}</p>
+            <p matLine>{{commentForm.value.rating}} Stars</p>
+            <p matLine>--{{commentForm.value.author}}</p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
 
+    <div class="form-size">
+      <h3>Leave a comment below!</h3>
+      <form novalidate [formGroup]="commentForm" #cmtForm="ngForm" (ngSubmit)="onSubmit()">
+        <p>
+          <mat-form-field class="full-width">
+            <input type="text" matInput formControlName="author" placeholder="Author" required>
+            <mat-error *ngIf="formErrors.author">{{formErrors.author}}</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          Your ratings:
+          <mat-slider min="1" max="5" step="1" formControlName="rating" thumbLabel tickInterval="1">
+          </mat-slider>
+        </p>
+        <p>
+          <mat-form-field class="full-width">
+            <textarea matInput formControlName="commentText" rows="10" placeholder="Your comment" required></textarea>
+            <mat-error *ngIf="formErrors.comment">{{formErrors.comment}}</mat-error>
+          </mat-form-field>
+        </p>
+        <p fxLayoutAlign="center center">
+          <button [disabled]="!cmtForm.valid" type="submit" mat-button
+            class="background-primary text-floral-white">Submit</button>
+        </p>
+      </form>
+    </div>
+  </div>
 </div>

@@ -70,15 +70,14 @@
           </div>
         </div> -->
       <div fxLayout="row">
-        <div fxFlex=20>
-          <img width="200px" src={{leader.image}} alt={{leader.name}}>
+        <div fxFlex=10>
+          <img style="height: 100%; width: 100%; object-fit: contain; border-radius: 80%" src={{leader.image}}
+            alt={{leader.name}}>
         </div>
-        <div fxFlex=80>
-          <div fxLayout="column" fxLayoutGap="0px">
-            <p>{{leader.name}}</p>
-            <p>{{leader.abbr}}</p>
-            <p>{{leader.description}}</p>
-          </div>
+        <div fxFlex=90 fxFlexOffset="20px">
+          <p><strong>{{leader.name}}</strong> {{leader.abbr}}<br>
+            {{leader.designation}}<br>
+            {{leader.description}}</p>
         </div>
       </div>
     </mat-list-item>

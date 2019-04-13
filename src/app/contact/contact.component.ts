@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { Feedback, CONTACTTYPE } from '../shared/feedback';
-import { validateBasis } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-contact',
