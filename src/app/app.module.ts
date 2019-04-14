@@ -18,7 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -34,6 +34,7 @@ import { LeaderService } from './services/leader.service';
 import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
+import { BASEURL } from './shared/baseUrl';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatButtonModule,
     MatListModule,
     AppRoutingModule,
+    HttpClientModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
@@ -71,7 +73,8 @@ import { MatSliderModule } from '@angular/material/slider';
   providers: [
     DishService,
     PromotionService,
-    LeaderService
+    LeaderService,
+    { provide: 'BaseURL', useValue: BASEURL }
   ],
   entryComponents: [LoginComponent],
   bootstrap: [AppComponent]

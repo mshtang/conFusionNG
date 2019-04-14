@@ -1,13 +1,13 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center stretch"
   fxLayoutGap="10px">
 
-  <mat-card fxFlex *ngIf="dish">
+  <mat-card fxFlex=60 *ngIf="dish">
     <mat-card-header>
       <mat-card-title>
         <h2>{{dish.name|uppercase}}</h2>
       </mat-card-title>
     </mat-card-header>
-    <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+    <img mat-card-image src="{{BaseURL+dish.image}}" alt={{dish.name}}>
     <mat-card-content>
       <p>{{dish.description}}</p>
     </mat-card-content>
@@ -20,7 +20,7 @@
     </mat-card-actions>
   </mat-card>
 
-  <div fxLayout="column" fxLayout.sm="column">
+  <div fxFlex=40 fxLayout="column" fxLayout.sm="column">
     <mat-card fxFlex *ngIf="dish">
       <mat-card-header>
         <mat-card-title>
