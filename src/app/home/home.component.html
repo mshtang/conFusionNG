@@ -15,7 +15,17 @@
       </p>
     </mat-card-content>
   </mat-card>
-  <div [hidden]="dish">
+  <mat-card fxFlex *ngIf="getDishErrMsg">
+    <mat-card-header>
+      <mat-card-title>
+        <h3>Error</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{getDishErrMsg}}</p>
+    </mat-card-content>
+  </mat-card>
+  <div [hidden]="dish||getDishErrMsg">
     <mat-spinner></mat-spinner>
   </div>
 

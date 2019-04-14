@@ -17,7 +17,7 @@ export class LeaderService {
     //     resolve(LEADERS.filter(leader => leader.featured === true)[0])
     //   }, 2500);
     // });
-    return of(LEADERS.filter(leader => leader.featured === true)[0]).pipe(delay(3000));
+    return of(LEADERS.filter(leader => leader.featured === true)[0]).pipe(delay(1000));
   }
 
   getLeaders(): Observable<Leader[]> {
@@ -26,6 +26,6 @@ export class LeaderService {
     //     resolve(LEADERS)
     //   }, 2500);
     // });
-    return of(LEADERS).pipe(delay(2000));
+    return of(LEADERS).pipe(delay(1000));
   }
 }

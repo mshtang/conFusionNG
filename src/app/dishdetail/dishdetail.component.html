@@ -19,6 +19,19 @@
       <button mat-button [routerLink]="['/dishdetail',next]"><span class="fa fa-chevron-right fa-lg"></span></button>
     </mat-card-actions>
   </mat-card>
+  <mat-card fxFlex *ngIf="getDishDetailErrMsg">
+    <mat-card-header>
+      <mat-card-title>
+        <h3>Error</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{getDishDetailErrMsg}}</p>
+    </mat-card-content>
+  </mat-card>
+  <div [hidden]="dish||getDishDetailErrMsg">
+    <mat-spinner></mat-spinner>
+  </div>
 
   <div fxFlex=40 fxLayout="column" fxLayout.sm="column">
     <mat-card fxFlex *ngIf="dish">

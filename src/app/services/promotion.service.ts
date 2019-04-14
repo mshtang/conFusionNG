@@ -18,7 +18,7 @@ export class PromotionService {
     //     resolve(PROMOTIONS)
     //   }, 2500);
     // });
-    return of(PROMOTIONS).pipe(delay(3000));
+    return of(PROMOTIONS).pipe(delay(1500));
   }
 
   getPromotion(id: string): Observable<Promotion> {
@@ -28,7 +28,7 @@ export class PromotionService {
     //     resolve(PROMOTIONS.filter(promo => promo.id === id)[0])
     //   }, 2000);
     // });
-    return of(PROMOTIONS.filter(promo => promo.id === id)[0]).pipe(delay(3000));
+    return of(PROMOTIONS.filter(promo => promo.id === id)[0]).pipe(delay(1000));
   }
 
   getFeaturedPromotion(): Observable<Promotion> {
@@ -38,6 +38,6 @@ export class PromotionService {
     //     resolve(PROMOTIONS.filter(promo => promo.featured)[0])
     //   }, 2000);
     // });
-    return of(PROMOTIONS.filter(promo => promo.featured)[0]).pipe(delay(2000));
+    return of(PROMOTIONS.filter(promo => promo.featured)[0]).pipe(delay(1200));
   }
 }

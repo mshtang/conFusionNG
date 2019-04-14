@@ -31,10 +31,12 @@ import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service'
 import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 import { BASEURL } from './shared/baseUrl';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +76,7 @@ import { BASEURL } from './shared/baseUrl';
     DishService,
     PromotionService,
     LeaderService,
+    ProcessHTTPMsgService,
     { provide: 'BaseURL', useValue: BASEURL }
   ],
   entryComponents: [LoginComponent],
