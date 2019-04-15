@@ -36,6 +36,7 @@ import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 import { BASEURL } from './shared/baseUrl';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { BASEURL } from './shared/baseUrl';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
