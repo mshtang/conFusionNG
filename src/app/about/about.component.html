@@ -71,7 +71,7 @@
         </div> -->
       <div fxLayout="row">
         <div fxFlex=10>
-          <img style="height: 100%; width: 100%; object-fit: contain; border-radius: 80%" src={{leader.image}}
+          <img style="height: 100%; width: 100%; object-fit: contain; border-radius: 80%" src="{{BaseURL+leader.image}}"
             alt={{leader.name}}>
         </div>
         <div fxFlex=90 fxFlexOffset="20px">
@@ -82,7 +82,10 @@
       </div>
     </mat-list-item>
   </div>
-  <div [hidden]="leaders">
+  <div *ngIf="getLeadershipErrMsg">
+    Error: {{getLeadershipErrMsg}}
+  </div>
+  <div [hidden]="leaders||getLeadershipErrMsg">
     <mat-spinner></mat-spinner>
     <h5>Loading leaders</h5>
   </div>
